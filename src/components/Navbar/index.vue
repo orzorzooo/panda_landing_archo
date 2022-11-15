@@ -18,8 +18,8 @@ export default {
   methods: {
     onScrollTrigger(navbar, value) {
       if (window.pageYOffset > value) {
-        navbar.classList.add("bg-opacity-100", "text-orange-500");
-      } else navbar.classList.remove("bg-opacity-100", "text-orange-500");
+        navbar.classList.add("bg-opacity-100", "text-gray-500");
+      } else navbar.classList.remove("bg-opacity-100", "text-gray-500");
     },
   },
   mounted() {

@@ -13,11 +13,7 @@
   width: 100%;
   height: 100%;
   z-index: 0;
-  background: linear-gradient(
-      to right bottom,
-      rgba(251, 146, 60, 100) 49.9999%,
-      #fff 50%
-    ),
+  background: linear-gradient(to right bottom, rgba(100, 100, 100, 100) 49.9999%, #fff 50%),
     linear-gradient(-50deg, #ffffff 16px, #000 0);
   /* transform-origin: top right; */
 }
