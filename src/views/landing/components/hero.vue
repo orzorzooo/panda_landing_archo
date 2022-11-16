@@ -8,6 +8,9 @@
       :arrows="false"
       :infinite="true"
       :autoplay="true"
+      :pauseOnHover="false"
+      :pauseOnTouch="false"
+      class="no-shadow"
     >
       <vueper-slide v-for="(slide, i) in slides" :key="i">
         <template #content>

@@ -18,6 +18,7 @@ export default {
     return {
       objects: [
         {
+          id: 1,
           name: "test",
           description: "lorem word 123",
           price: "3000",
@@ -25,6 +26,7 @@ export default {
             "https://images.pexels.com/photos/271647/pexels-photo-271647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },
         {
+          id: 2,
           name: "test",
           price: "3000",
           description: "lorem word",
@@ -32,6 +34,7 @@ export default {
             "https://images.pexels.com/photos/271647/pexels-photo-271647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },
         {
+          id: 3,
           name: "test",
           price: "3000",
           description: "lorem word",

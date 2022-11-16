@@ -1,5 +1,9 @@
 <template>
-  <div data-aos="fade" :data-aos-delay="delay ? delay : ''">
+  <div
+    data-aos="fade"
+    :data-aos-delay="delay ? delay : ''"
+    @click="$router.push({ name: 'object', params: { id: item.id } })"
+  >
     <div>
       <v-img :src="item.image ? item.image : ''"> </v-img>
     </div>
