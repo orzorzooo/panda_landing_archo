@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "8af08fa5-9564-440e-b60d-6db5b6a4fcd6",
+    "name": "panda.api.orzorzooo.com",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2022-11-21T12:56:13.239Z",
+    "modified": "2022-11-21T12:56:27.262Z",
+    "data": [
+      {
+        "name": "url",
+        "value": "https://panda.api.orzorzooo.com"
+      }
+    ]
+  }
+]

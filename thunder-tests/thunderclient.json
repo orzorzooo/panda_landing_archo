@@ -1,0 +1,22 @@
+[
+  {
+    "_id": "7f535dc2-8d39-4002-bda4-939dfb5c9ed5",
+    "colId": "52a9f055-6590-4238-955e-ba2304736861",
+    "containerId": "",
+    "name": "get properties",
+    "url": "{{url}}/items/properties?fields=*,files.*",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-11-21T12:56:47.964Z",
+    "modified": "2022-11-21T12:57:35.609Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "fields",
+        "value": "*,files.*",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  }
+]
