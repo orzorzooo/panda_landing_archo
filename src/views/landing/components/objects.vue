@@ -12,6 +12,7 @@
 </template>
 <script>
 import CardObject from "@/components/Cards/object.vue";
+import { get } from "@/api/request";
 export default {
   components: { CardObject },
   data() {
@@ -43,6 +44,9 @@ export default {
         },
       ],
     };
+  },
+  async created() {
+    this.objects = await get({ url: "properties", params: { fields: "*,files.directus_files_id" } });
   },
 };
 </script>
