@@ -1,35 +1,36 @@
 <template>
   <div>
-    <div class="h-150">
-      <div class="h-full">
-        <transition name="slide-fade">
-          <div :style="bg()" class="h-full img">
-            <v-row class="h-full p-0">
-              <v-col
-                :cols="6"
-                :md="3"
-                v-for="(item, i) in features"
-                :key="i"
-                class="border-r-1 border-b-1 on-hover p-0 text-black text-2xl font-bold"
-                @mouseenter="hover = i"
-              >
-                <v-expand-transition>
-                  <!-- <v-icon v-if="hover == i"> mdi-plus-circle </v-icon> -->
-                  <div v-if="hover == i" class="bg-white <md:h-full md:h-30">
-                    <div class="p-10 pt-3">
-                      <div class="text-sm mb-3">service</div>
-                      <div class="">{{ item.title }}</div>
+    <v-container fluid class="p-0">
+      <div class="h-150">
+        <div class="h-full">
+          <transition name="slide-fade">
+            <div :style="bg()" class="h-full img">
+              <v-row class="h-full" no-gutters>
+                <v-col
+                  :cols="6"
+                  :md="3"
+                  v-for="(item, i) in features"
+                  :key="i"
+                  class="border-r-1 border-b-1 on-hover p-0 text-black text-2xl font-bold"
+                  @mouseenter="hover = i"
+                >
+                  <v-expand-transition>
+                    <!-- <v-icon v-if="hover == i"> mdi-plus-circle </v-icon> -->
+                    <div v-if="hover == i" class="bg-white <md:h-full md:h-30">
+                      <div class="p-10 pt-3">
+                        <div class="text-sm mb-3">service</div>
+                        <div class="">{{ item.title }}</div>
+                      </div>
                     </div>
+                  </v-expand-transition>
+                  <div class="p-10 pt-3 text-white" v-if="hover != i">
+                    <div class="text-sm mb-3">service</div>
+                    <div class="">{{ item.title }}</div>
                   </div>
-                </v-expand-transition>
-                <div class="p-10 pt-3 text-white" v-if="hover != i">
-                  <div class="text-sm mb-3">service</div>
-                  <div class="">{{ item.title }}</div>
-                </div>
-              </v-col>
-            </v-row>
-          </div>
-          <!-- <v-img :src="features[hover].image" height="100%">
+                </v-col>
+              </v-row>
+            </div>
+            <!-- <v-img :src="features[hover].image" height="100%">
             <v-row class="h-full p-0">
               <v-col
                 :cols="6"
@@ -43,9 +44,10 @@
               </v-col>
             </v-row>
           </v-img> -->
-        </transition>
+          </transition>
+        </div>
       </div>
-    </div>
+    </v-container>
   </div>
 </template>
 <script>

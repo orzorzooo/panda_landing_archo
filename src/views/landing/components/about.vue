@@ -2,15 +2,23 @@
   <div class="z-60">
     <v-container class="py-30">
       <v-row class="text-gray-500">
-        <v-col sm="12" md="6" data-aos="fade-right">
-          <div class="text-lg <md:text-center md:(text-left text-sm)">關於悟見</div>
-          <div class="text-4xl <md:text-center font-bold md:(text-left text-6xl font-thin) my-5">全新的生活型態</div>
+        <v-col sm="12" md="6" data-aos="fade">
+          <div class="text-lg <md:text-center md:(text-left text-sm)">
+            關於悟見
+          </div>
+          <div
+            class="text-4xl <md:text-center font-bold md:(text-left text-6xl font-thin) my-5"
+          >
+            全新的生活型態
+          </div>
           <div class="leading-loose">
-            Architecture bibendum pharetra eleifend. Suspendisse vel volutpat purus, sit amet bibendum nisl. Cras mollis
-            turpis a ipsum ultes, nec condimentum ipsum consequat. Mauris vitae consequat nibh, vitae interdum mi.
+            Architecture bibendum pharetra eleifend. Suspendisse vel volutpat
+            purus, sit amet bibendum nisl. Cras mollis turpis a ipsum ultes, nec
+            condimentum ipsum consequat. Mauris vitae consequat nibh, vitae
+            interdum mi.
           </div>
         </v-col>
-        <v-col sm="12" md="6" data-aos="fade-left">
+        <v-col sm="12" md="6" data-aos="fade" data-aos-delay="300">
           <v-img
             src="https://images.pexels.com/photos/276625/pexels-photo-276625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             height="200"
