@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-400 h-50 p-5 flex items-center">
+  <div class="bg-gray-300/50 h-300px p-5 flex items-center">
     <v-img :src="img" height="100%" contain>
       <slot></slot>
     </v-img>
