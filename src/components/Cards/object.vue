@@ -1,5 +1,6 @@
 <template>
   <div
+    class="cursor-pointer"
     data-aos="fade"
     :data-aos-delay="delay ? delay : ''"
     @click="$router.push({ name: 'object', params: { id: item.id } })"
