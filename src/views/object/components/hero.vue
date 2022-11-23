@@ -1,34 +1,17 @@
 <template>
   <v-container fluid class="p-0">
-    <v-img
-      :src="featureImg"
-      height="100vh"
-      gradient="to bottom right, rgba(0,0,0,.9), rgba(0,0,0,.3)"
-    >
+    <v-img :src="featureImg" height="100vh" gradient="to bottom right, rgba(0,0,0,.9), rgba(0,0,0,.3)">
       <v-container class="h-full">
         <v-row align="center" class="h-full p-10">
           <v-col cols="12" sm="12" md="6">
             <div :class="headerBlur ? headerBlurClass : ''" data-aos="fade">
-              <div class="text text-yellow-400/80 mb-3" data-aos="fade-right">
+              <div class="text text-yellow-400/80 mb-3" data-aos="fade">
                 {{ property.address }}
               </div>
-              <div
-                class="text-5xl text-white"
-                data-aos="fade-right"
-                data-aos-delay="300"
-              >
+              <div class="text-5xl text-white" data-aos="fade" data-aos-delay="100">
                 {{ property.name }}
               </div>
-
-              <HeaderList
-                :title="'租金'"
-                :content="`$${property.rent_price}/月`"
-              ></HeaderList>
-              <HeaderList
-                :delay="300"
-                :title="'地坪'"
-                :content="`${property.square_meter}坪`"
-              ></HeaderList>
+              <HeaderList :property="property"></HeaderList>
             </div>
           </v-col>
           <v-col sm="12"> </v-col>

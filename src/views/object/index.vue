@@ -2,7 +2,16 @@
   <div v-if="property">
     <Hero :property="property"></Hero>
     <Gallery :files="property.files"></Gallery>
-    <Introduce :property="property"></Introduce>
+    <v-container>
+      <v-row class="md:py-30">
+        <v-col>
+          <Introduce :property="property"></Introduce>
+        </v-col>
+        <v-col cols="12" md="4">
+          <Specs></Specs>
+        </v-col>
+      </v-row>
+    </v-container>
 
     <!-- <div>obj {{ $route.params.id }}</div> -->
   </div>
@@ -13,8 +22,9 @@ import HeaderList from "./components/headerList.vue";
 import Hero from "./components/hero.vue";
 import Introduce from "./components/introduce.vue";
 import Gallery from "./components/gallery.vue";
+import Specs from "./components/specs.vue";
 export default {
-  components: { HeaderList, Hero, Introduce, Gallery },
+  components: { HeaderList, Hero, Introduce, Gallery, Specs },
   data() {
     return {
       property: null,

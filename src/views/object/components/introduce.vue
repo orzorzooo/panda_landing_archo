@@ -1,15 +1,11 @@
 <template>
-  <v-container class="py-30">
-    <v-row>
-      <v-col col="12" md="8">
-        <v-divider></v-divider>
-        <div class="text-gray-600 leading-loose my-10">
-          <div v-html="description" class=""></div>
-          <v-btn text class="underline mt-5 !text-sm" @click="dialog = true">...顯示更多內容 ></v-btn>
-        </div>
-        <v-divider></v-divider>
-      </v-col>
-    </v-row>
+  <div>
+    <v-divider></v-divider>
+    <div class="text-gray-600 leading-loose my-10">
+      <div v-html="description" class=""></div>
+      <v-btn text class="underline mt-5 !text-sm" @click="dialog = true">...顯示更多內容 ></v-btn>
+    </div>
+    <v-divider></v-divider>
     <v-dialog v-model="dialog" :width="$vuetify.breakpoint.xsOnly ? '100%' : '50%'">
       <div class="text-gray-600 text-md bg-gray-100 p-15 leading-relaxed w-1/2">
         <div class="text-lg font-bold">{{ property.name }}</div>
@@ -18,7 +14,15 @@
         <v-divider></v-divider>
       </div>
     </v-dialog>
-  </v-container>
+  </div>
+  <!-- <v-container class="py-30">
+    <v-row>
+      <v-col col="12" md="8">
+       
+      </v-col>
+    </v-row>
+   
+  </v-container> -->
 </template>
 <script>
 export default {
