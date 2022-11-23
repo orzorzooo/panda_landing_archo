@@ -2,7 +2,11 @@ import axios from "axios";
 export const BASEURL = `${process.env.VUE_APP_API_URL}`;
 
 // for directus封裝
-export const get = async ({ type = "items", url = "", params = { fields: "*,files.*" } }) => {
+export const get = async ({
+  type = "items",
+  url = "",
+  params = { fields: "*,files.*" },
+}) => {
   try {
     const { data, status } = await axios.get(`${BASEURL}/${type}/${url}`, {
       params,
@@ -24,9 +28,15 @@ export const get = async ({ type = "items", url = "", params = { fields: "*,file
 };
 
 // for directus 會回傳一個圖片asset用的url
-export const assetURL = (assetID, params = { quality: null, width: null }) => {
+export const assetURL = (
+  assetID,
+  params = { quality: null, width: null, transforms: null }
+) => {
   // quality=${params.quality}&width=${params.width}
   const quality = params.quality ? `quality=${params.quality}` : "";
-  const width = params.width ? `width=${params.width}` : "";
-  return `${BASEURL}/assets/${assetID}?${quality}&${width}`;
+  const width = params.width ? `&width=${params.width}` : "";
+  const transforms = params.transforms
+    ? `&transforms=${params.transforms}`
+    : [];
+  return `${BASEURL}/assets/${assetID}?${quality}${width}${transforms}`;
 };
