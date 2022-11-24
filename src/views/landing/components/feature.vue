@@ -18,6 +18,7 @@
             v-for="(item, i) in features"
             :key="i"
             @mouseenter="hover = i"
+            @click="hover = i"
             class="border-r-1 border-b-1 on-hover p-0 text-black text-2xl font-bold on-hover"
           >
             <v-expand-transition>
