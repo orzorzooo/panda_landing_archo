@@ -1,5 +1,5 @@
 <template>
-  <div class="h-30 bg-gray-500 text-white">
+  <div class="h-20 bg-gray-500 text-white">
     <v-container class="text-center">
       <div>
         <v-btn v-for="icon in icons" :key="icon" class="mx-4" icon dark>
