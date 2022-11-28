@@ -18,5 +18,24 @@
       }
     ],
     "tests": []
+  },
+  {
+    "_id": "b61a06c0-d1a6-44d6-9404-8f8a14a341ee",
+    "colId": "52a9f055-6590-4238-955e-ba2304736861",
+    "containerId": "",
+    "name": "login",
+    "url": "{{url}}/auth/login",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-11-28T11:47:40.830Z",
+    "modified": "2022-11-28T11:49:39.362Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"pandaadmin@gmail.com\",\n  \"password\":\"b1201b1200\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
