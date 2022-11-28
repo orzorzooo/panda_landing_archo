@@ -1,9 +1,9 @@
 <template>
   <div class="h-full bg-gray-700 pt-20">
-    <v-toolbar dense>
+    <v-toolbar dense dark color="rgba(55,65,81,1)" flat>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Title</v-toolbar-title>
+      <v-toolbar-title>{{ user.first_name }}</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
