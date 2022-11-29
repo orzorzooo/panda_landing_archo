@@ -1,7 +1,7 @@
 <template>
-  <div class="h-full bg-gray-700 pt-20">
+  <div class="h-full bg-gray-700 pt-20" v-if="user">
     <v-toolbar dense dark color="rgba(55,65,81,1)" flat>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
 
       <v-toolbar-title>{{ user.first_name }}</v-toolbar-title>
 
@@ -19,8 +19,11 @@
         <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
     </v-toolbar>
+
     <div class="h-75vh overflow-y-scroll">
-      <router-view />
+      <v-container>
+        <router-view />
+      </v-container>
     </div>
   </div>
 </template>

@@ -29,7 +29,7 @@ const routes = [
     redirect: { name: "home" },
     children: [
       {
-        path: "/user/home",
+        path: "home",
         name: "home",
         component: () => import("@/views/user/home.vue"),
         meta: { requireAuth: true },
@@ -42,7 +42,8 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
     path: "/404",
@@ -60,10 +61,12 @@ const router = new VueRouter({
   routes,
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   // ...
-  const auth = authenticated();
-  if (to.meta.requireAuth && to.name !== "login" && !auth) next({ name: "login" });
+  const auth = await authenticated();
+  console.log(auth);
+  if (to.meta.requireAuth && to.name !== "login" && !auth)
+    next({ name: "login" });
   next();
 });
 

@@ -4,7 +4,9 @@
       <v-container class="h-full pb-0">
         <v-row class="h-full" no-gutters>
           <v-col cols="12" md="6" align-self="center" class="text-center">
-            <div class="text-orange-300/80 text-xl font-bold my-10 mt-20">登入</div>
+            <div class="text-orange-300/80 text-xl font-bold my-10 mt-20">
+              登入
+            </div>
             <div class="px-10">
               <v-text-field
                 label="email"
@@ -25,9 +27,18 @@
                 @click:append="showPassword = !showPassword"
                 counter
                 v-model="form.password"
+                @keydown.enter.prevent="login"
               ></v-text-field>
               <div class="text-right mt-5">
-                <v-btn outlined color="" dark width="100%" x-large @click="login">登入</v-btn>
+                <v-btn
+                  outlined
+                  color=""
+                  dark
+                  width="100%"
+                  x-large
+                  @click="login"
+                  >登入</v-btn
+                >
               </div>
             </div>
           </v-col>
@@ -58,15 +69,22 @@ export default {
     };
   },
   methods: {
-    ...mapMutations("user", ["setToken", "setUser"]),
+    ...mapMutations("user", ["setToken", "setUser", "removeToken"]),
     async login() {
       try {
-        const data = await post({ data: this.form, type: "auth", collection: "login" });
-        this.setToken(data.access_token);
+        const data = await post({
+          data: this.form,
+          type: "auth",
+          collection: "login",
+        });
+        this.setToken({
+          token: data.access_token,
+          refresh_token: data.refresh_token,
+        });
         await this.getUserInfo();
         this.$router.push({ name: "home" });
       } catch (error) {
-        console.log("fuck");
+        this.removeToken();
         this.error.password = "使用者帳號或密碼錯誤";
       }
     },

@@ -4,19 +4,23 @@
     "colId": "52a9f055-6590-4238-955e-ba2304736861",
     "containerId": "",
     "name": "get properties",
-    "url": "{{url}}/items/properties?fields=*,files.*",
+    "url": "{{url}}/items/properties?fields=*,files.directus_files_id",
     "method": "GET",
     "sortNum": 10000,
     "created": "2022-11-21T12:56:47.964Z",
-    "modified": "2022-11-21T12:57:35.609Z",
+    "modified": "2022-11-29T09:14:42.279Z",
     "headers": [],
     "params": [
       {
         "name": "fields",
-        "value": "*,files.*",
+        "value": "*,files.directus_files_id",
         "isPath": false
       }
     ],
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdiOWZiZTQ3LTk3ZGItNDFlOC1hMzhkLWQ5Zjg5Y2IzNmJlNiIsInJvbGUiOiIwMDkwZGY1YS04ZTg3LTQ4ODAtYmRhYS02ODQ2OThjOWEzYTAiLCJhcHBfYWNjZXNzIjoxLCJhZG1pbl9hY2Nlc3MiOjEsImlhdCI6MTY2OTcxMjUyOCwiZXhwIjoxNjY5NzE2MTI4LCJpc3MiOiJkaXJlY3R1cyJ9.x2si65A1L114K4XrEN0Mmpncry8WD-s-T0QbPywEccA"
+    },
     "tests": []
   },
   {
@@ -34,6 +38,25 @@
     "body": {
       "type": "json",
       "raw": "{\n  \"email\":\"pandaadmin@gmail.com\",\n  \"password\":\"b1201b1200\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "42b4a2c1-e257-4e7b-b795-b7b1312ca80b",
+    "colId": "52a9f055-6590-4238-955e-ba2304736861",
+    "containerId": "",
+    "name": "login Copy",
+    "url": "{{url}}/auth/logout",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2022-11-29T09:11:44.637Z",
+    "modified": "2022-11-29T09:15:10.133Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"refresh_token\":\"R08nX4T_yHgpLCvNEOrX-ge4LY7Lb5APWltNbyqNA6ETLUuX66dT2YvFz1j1C024\"\n}",
       "form": []
     },
     "tests": []
