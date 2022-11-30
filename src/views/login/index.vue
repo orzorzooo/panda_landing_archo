@@ -81,7 +81,7 @@ export default {
     };
   },
   methods: {
-    ...mapMutations("user", ["setToken", "setUser", "removeToken"]),
+    ...mapMutations("user", ["setToken", "setUser", "setLogout"]),
     async login() {
       try {
         const data = await post({
@@ -89,20 +89,26 @@ export default {
           type: "auth",
           collection: "login",
         });
+        console.log("login", data);
+        if (!data) throw Error;
         this.setToken({
           token: data.access_token,
           refresh_token: data.refresh_token,
         });
-        await this.getUserInfo();
+        const user = await this.getUserInfo();
+        if (!user) throw Error;
         this.$router.push({ name: "home" });
       } catch (error) {
-        this.removeToken();
+        console.log("loginfail");
+        this.setLogout();
         this.error.password = "使用者帳號或密碼錯誤";
       }
     },
     async getUserInfo() {
       const data = await get({ type: "users", url: "me" });
       this.setUser(data);
+      console.log(data);
+      return data;
     },
   },
 };
