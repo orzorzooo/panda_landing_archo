@@ -29,7 +29,7 @@
                 v-model="form.password"
                 @keydown.enter.prevent="login"
               ></v-text-field>
-              <div class="text-right mt-5">
+              <div class="text-right my-5">
                 <v-btn
                   outlined
                   color=""
@@ -38,6 +38,18 @@
                   x-large
                   @click="login"
                   >登入</v-btn
+                >
+              </div>
+              <div>
+                還不是會員?
+                <a
+                  dark
+                  x-large
+                  text
+                  plain
+                  class="p-0 !text-white ml-3"
+                  @click.prevent="$router.push({ name: 'register' })"
+                  >註冊</a
                 >
               </div>
             </div>
