@@ -36,12 +36,25 @@ const routes = [
   {
     path: "/user/",
     component: () => import("@/views/user/index.vue"),
-    redirect: { name: "home" },
+    redirect: { name: "properties" },
     children: [
       {
         path: "home",
         name: "home",
+        redirect: { name: "properties" },
         component: () => import("@/views/user/home.vue"),
+        meta: { requireAuth: true },
+      },
+      {
+        path: "properties",
+        name: "properties",
+        component: () => import("@/views/user/properties/index.vue"),
+        meta: { requireAuth: true },
+      },
+      {
+        path: "properties/update",
+        name: "propertiesUpdate",
+        component: () => import("@/views/user/properties/update.vue"),
         meta: { requireAuth: true },
       },
     ],
