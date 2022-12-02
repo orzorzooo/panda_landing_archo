@@ -6,10 +6,11 @@ export const authenticated = async () => {
   if (!token) return false;
   try {
     const data = await get({ type: "users", url: "me" });
+    if (!data) throw Error;
     store.commit("user/setUser", data);
     return true;
   } catch (error) {
-    store.commit("user/setLogout", data);
+    store.commit("user/setLogout");
     return false;
   }
 };
