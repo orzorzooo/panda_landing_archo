@@ -8,7 +8,7 @@
         color="primary"
         @click="
           setReserveObjectID(property.id);
-          $router.push({ name: 'reserve' });
+          $router.push({ name: 'reserve', params: { id: property.id } });
         "
       >
         立即預約

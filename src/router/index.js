@@ -58,7 +58,7 @@ const routes = [
         meta: { requireAuth: true },
       },
       {
-        path: "reserve",
+        path: "reserve/:id",
         name: "reserve",
         component: () => import("@/views/user/reserve.vue"),
         meta: { requireAuth: true },
