@@ -8,10 +8,14 @@
           <Introduce :property="property"></Introduce>
         </v-col>
         <v-col cols="12" md="4">
-          <Specs></Specs>
+          <GoogleMap :property="property"></GoogleMap>
         </v-col>
       </v-row>
     </v-container>
+    <v-container>
+      <Specs :property="property"></Specs>
+    </v-container>
+    <div></div>
 
     <!-- <div>obj {{ $route.params.id }}</div> -->
   </div>
@@ -23,8 +27,9 @@ import Hero from "./components/hero.vue";
 import Introduce from "./components/introduce.vue";
 import Gallery from "./components/gallery.vue";
 import Specs from "./components/specs.vue";
+import GoogleMap from "./components/googleMap.vue";
 export default {
-  components: { HeaderList, Hero, Introduce, Gallery, Specs },
+  components: { HeaderList, Hero, Introduce, Gallery, Specs, GoogleMap },
   data() {
     return {
       property: null,

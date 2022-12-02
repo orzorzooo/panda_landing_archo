@@ -4,10 +4,14 @@ export default {
   namespaced: true,
   state: {
     user: null,
+    reserveObjectID: null,
   },
   getters: {
     user(state) {
       return state.user;
+    },
+    reserveObjectID(state) {
+      return state.reserveObjectID;
     },
   },
   mutations: {
@@ -25,6 +29,9 @@ export default {
       localStorage.removeItem("panda_token");
       localStorage.removeItem("panda_refresh_token");
       state.user = null;
+    },
+    setReserveObjectID(state, payload) {
+      state.reserveObjectID = payload;
     },
   },
   actions: {

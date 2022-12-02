@@ -8,5 +8,18 @@
 </template>
 <script>
 import { get, post } from "@/api/request";
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  computed: {
+    ...mapGetters("user", ["reserveObjectID"]),
+  },
+  created() {
+    if (this.reserveObjectID) {
+      return this.$router.push({
+        name: "object",
+        params: { id: this.reserveObjectID },
+      });
+    }
+  },
+};
 </script>
