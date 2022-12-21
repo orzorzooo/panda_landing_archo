@@ -1,12 +1,6 @@
 <template>
   <div class="h-full bg-gray-700 pt-20" v-if="user">
-    <v-toolbar
-      dense
-      dark
-      color="rgba(55,65,81,1)"
-      flat
-      class="<md:px-2 md:px-20"
-    >
+    <v-toolbar dense dark color="rgba(55,65,81,1)" flat class="<md:px-2 md:px-20">
       <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
 
       <v-toolbar-title>{{ user.first_name }}</v-toolbar-title>
