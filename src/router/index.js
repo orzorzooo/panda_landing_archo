@@ -97,6 +97,7 @@ const router = new VueRouter({
 
 router.beforeEach(async (to, from, next) => {
   // ...
+  window.scrollTo(0, 0);
   const auth = await authenticated();
   console.log(auth);
   if (to.meta.requireAuth && to.name !== "login" && !auth)
