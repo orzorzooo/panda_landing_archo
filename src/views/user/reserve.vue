@@ -1,8 +1,9 @@
 <template>
-  <div class="text-gray-200" v-if="property">
+  <div class="text-gray-200 pb-10" v-if="property">
     <div class="text-3xl font-bold my-3">預約名稱 {{ property.name }}</div>
     <div>
-      <v-img :src="featureImg"></v-img>
+      <v-img :src="featureImg" v-if="featureImg"></v-img>
+      <ImgIcon v-else></ImgIcon>
     </div>
     <v-divider dark class="my-3"></v-divider>
     <div class="text-xl">填寫基本資料</div>
@@ -41,11 +42,15 @@
 <script>
 import { get, post, assetURL } from "@/api/request";
 import { mapGetters } from "vuex";
+import ImgIcon from "@/components/imgIcon.vue";
 export default {
+  components: { ImgIcon },
   data() {
     return {
       assetURL,
-      property: {},
+      property: {
+        files: [],
+      },
       reserve: {
         datetime: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
           .toISOString()
@@ -59,7 +64,8 @@ export default {
   computed: {
     ...mapGetters("user", ["user"]),
     featureImg() {
-      if (!this.property.files) return "";
+      // if (this.property.files.length == 0) return "";
+      if (this.property.files.length == 0) return;
       return assetURL(this.property.files[0].directus_files_id, {
         quality: 50,
         width: 1024,
