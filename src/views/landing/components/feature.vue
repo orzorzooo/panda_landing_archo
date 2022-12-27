@@ -17,9 +17,13 @@
           <v-col
             v-for="(item, i) in features"
             :key="i"
-            @click="hover = i"
+            @click="
+              hover = i;
+              item.routeName ? $router.push(item.routeName) : '';
+            "
             @mouseover="hover = i"
             class="border-r-1 border-b-1 on-hover p-0 text-black text-2xl font-bold on-hover"
+            :class="item.routeName ? 'cursor-pointer' : ''"
             cols="6"
             md="3"
           >
@@ -69,18 +73,22 @@ export default {
         {
           title: "租賃",
           image: require("@/assets/images/landing-feature-01.jpg"),
+          routeName: null,
         },
         {
           title: "買賣",
           image: require("@/assets/images/landing-feature-02.jpg"),
+          routeName: null,
         },
         {
           title: "出租",
           image: require("@/assets/images/landing-feature-03.jpg"),
+          routeName: null,
         },
         {
           title: "輕鋼構",
           image: require("@/assets/images/landing-feature-04.jpg"),
+          routeName: "rc",
         },
       ],
     };
