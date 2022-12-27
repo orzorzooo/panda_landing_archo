@@ -43,6 +43,7 @@ export const post = async ({
   if (token) {
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
   }
+  console.log("fuck", token);
   try {
     const { data, status } = await axios.post(
       `${BASEURL}/${type}/${collection}`,

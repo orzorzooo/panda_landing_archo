@@ -102,6 +102,7 @@ export default {
         console.log("loginfail");
         this.setLogout();
         this.error.password = "使用者帳號或密碼錯誤";
+        window.location.reload();
       }
     },
     async getUserInfo() {
