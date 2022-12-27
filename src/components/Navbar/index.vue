@@ -13,7 +13,9 @@
           ><div class="text-2xl font-bold">PANDA</div></NavItem
         >
         <v-spacer></v-spacer>
-
+        <NavItem :routeName="'rc'"
+          ><div class="text-2xl font-bold">輕鋼構</div></NavItem
+        >
         <NavItem :routeName="'login'" v-if="!user"
           ><div class="text-2xl font-bold">登入</div></NavItem
         >
@@ -42,6 +44,13 @@
               <NavItem :routeName="'landing'"
                 ><div class="text-xl font-bold text-orange-200/70">
                   首頁
+                </div></NavItem
+              >
+            </v-list-item>
+            <v-list-item link>
+              <NavItem :routeName="'rc'"
+                ><div class="text-xl font-bold text-orange-200/70">
+                  輕鋼構
                 </div></NavItem
               >
             </v-list-item>
@@ -84,7 +93,10 @@ export default {
       company_name: "PANDA",
       scroll: false,
       drawer: false,
-      routes: [{ title: "登入", routeName: "login" }],
+      routes: [
+        { title: "登入", routeName: "login" },
+        { title: "輕鋼構", routeName: "rc" },
+      ],
     };
   },
   methods: {
