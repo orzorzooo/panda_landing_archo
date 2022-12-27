@@ -4,7 +4,7 @@ const xsrfHeaderName = "Authorization";
 // for directus封裝
 export const get = async ({
   type = "items",
-  url = "",
+  collection = "",
   params = { fields: "*,files.*" },
 }) => {
   const token = localStorage.getItem("panda_token");
@@ -12,9 +12,12 @@ export const get = async ({
     axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
   }
   try {
-    const { data, status } = await axios.get(`${BASEURL}/${type}/${url}`, {
-      params,
-    });
+    const { data, status } = await axios.get(
+      `${BASEURL}/${type}/${collection}`,
+      {
+        params,
+      }
+    );
     console.log(
       `%cGET ${status}`,
       "font-weight:bold;border:1px solid white;padding:0.3rem 1rem;background-color:green;border-radius:1rem"

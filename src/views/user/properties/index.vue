@@ -45,7 +45,7 @@ export default {
     };
   },
   async created() {
-    this.items = await get({ url: "properties" });
+    this.items = await get({ collection: "properties" });
     console.log(this.items);
   },
 };

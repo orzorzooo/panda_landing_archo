@@ -5,7 +5,7 @@ export const authenticated = async () => {
   const token = localStorage.getItem("panda_token");
   if (!token) return false;
   try {
-    const data = await get({ type: "users", url: "me" });
+    const data = await get({ type: "users", collection: "me" });
     if (!data) throw Error;
     store.commit("user/setUser", data);
     return true;

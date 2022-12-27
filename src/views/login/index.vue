@@ -105,7 +105,7 @@ export default {
       }
     },
     async getUserInfo() {
-      const data = await get({ type: "users", url: "me" });
+      const data = await get({ type: "users", collection: "me" });
       this.setUser(data);
       console.log(data);
       return data;

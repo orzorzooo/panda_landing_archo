@@ -42,7 +42,7 @@ export default {
   },
   async created() {
     this.property = await get({
-      url: `properties/${this.$route.params.id}`,
+      collection: `properties/${this.$route.params.id}`,
       params: { fields: "*,files.directus_files_id" },
     });
   },

@@ -4,7 +4,7 @@
       <div class="text-white font-thin text-3xl mb-15">房源一覽</div>
       <v-row>
         <v-col sm="6" md="4" v-for="(item, i) in objects" :key="i">
-          <CardObject :item="item" :delay="i * 200"></CardObject>
+          <CardObject :item="item"></CardObject>
         </v-col>
       </v-row>
     </v-container>
@@ -47,7 +47,7 @@ export default {
   },
   async created() {
     this.objects = await get({
-      url: "properties",
+      collection: "properties",
       params: { fields: "*,files.directus_files_id" },
     });
   },

@@ -7,8 +7,18 @@
     <v-divider dark class="my-3"></v-divider>
     <div class="text-xl">填寫基本資料</div>
     <v-form dark>
-      <v-text-field v-model="reserve.name" label="預約姓名" prepend-icon="mdi-user" dark></v-text-field>
-      <v-text-field v-model="reserve.email" label="email信箱" prepend-icon="mdi-mail" dark></v-text-field>
+      <v-text-field
+        v-model="reserve.name"
+        label="預約姓名"
+        prepend-icon="mdi-user"
+        dark
+      ></v-text-field>
+      <v-text-field
+        v-model="reserve.email"
+        label="email信箱"
+        prepend-icon="mdi-mail"
+        dark
+      ></v-text-field>
       <v-text-field
         dark
         v-model="reserve.datetime"
@@ -18,7 +28,11 @@
         @click="dateDialog = true"
       ></v-text-field>
       <v-dialog v-model="dateDialog" dark>
-        <v-date-picker v-model="reserve.datetime" scrollable width="100%"></v-date-picker>
+        <v-date-picker
+          v-model="reserve.datetime"
+          scrollable
+          width="100%"
+        ></v-date-picker>
       </v-dialog>
       <v-btn block outlined dark x-large @click="submit">送出預約</v-btn>
     </v-form>
@@ -33,7 +47,9 @@ export default {
       assetURL,
       property: {},
       reserve: {
-        datetime: new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().substr(0, 10),
+        datetime: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+          .toISOString()
+          .substr(0, 10),
         name: "",
         email: "",
       },
@@ -59,7 +75,7 @@ export default {
   },
   async created() {
     this.property = await get({
-      url: `properties/${this.$route.params.id}`,
+      collection: `properties/${this.$route.params.id}`,
       params: { fields: "*,files.directus_files_id" },
     });
     this.reserve.name = this.user.first_name;
